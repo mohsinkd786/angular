@@ -1,0 +1,36 @@
+<table>
+    <tr>
+      <th>
+        Number
+      </th>
+      <th>
+        Quotient
+      </th>
+      <th>
+        Sum
+      </th>
+      <th>
+        Difference
+      </th>
+      <th>
+        Product
+      </th>
+    </tr>
+    <tr *ngFor="let u of data">
+        <td>
+            {{u.number}}
+          </td>
+          <td>
+            {{u.quotient}}
+          </td>
+          <td>
+            {{u.sum}}
+          </td>
+          <td>
+            {{u.diff}}
+          </td>
+          <td>
+            {{u.mul}}
+          </td>
+    </tr>
+  </table>
