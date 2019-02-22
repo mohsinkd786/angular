@@ -1,0 +1,39 @@
+
+<h2> ngFOR</h2>
+<div>
+  <ul>
+    <li *ngFor="let n of names" >{{n}}</li>
+  </ul>
+</div>
+
+<h2>ngIF</h2>
+<div>
+  <span *ngIf="showTable; then table else notable" ></span>
+    <ng-template #table>
+      <table>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Phone
+          </th>
+          <th>
+            Address
+          </th>
+        </tr>
+        <tr *ngFor="let u of users ">
+            <td>
+                {{u.name}}
+              </td>
+              <td>
+                {{u.phone}}
+              </td>
+              <td>
+                {{u.address}}
+              </td>
+        </tr>
+      </table>
+    </ng-template>
+    <ng-template #notable>{{noTableMessage}}</ng-template>
+</div>
