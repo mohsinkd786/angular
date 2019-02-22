@@ -13,7 +13,8 @@
 <div>
   <span *ngIf="showTable; then table else notable" ></span>
     <ng-template #table>
-      <table>
+      <table class='user-data'>
+        <thead>
         <tr>
           <th>
             Name
@@ -25,6 +26,8 @@
             Address
           </th>
         </tr>
+      </thead>
+        <tbody>
         <tr *ngFor="let u of users ">
             <td>
                 {{u.name}}
@@ -36,6 +39,7 @@
                 {{u.address}}
               </td>
         </tr>
+      </tbody>
       </table>
     </ng-template>
     <ng-template #notable>{{noTableMessage}}</ng-template>
