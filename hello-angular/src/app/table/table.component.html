@@ -1,3 +1,6 @@
+<div>
+    <fieldset><legend>Dynamic Table</legend>
+  
 <div class='table-form'>
   <input #number type="number" placeholder="Enter Number">
   <input #limit type="number" placeholder="Specify Limit">
@@ -24,6 +27,9 @@
       <th>
         Product
       </th>
+      <th>
+        Division
+      </th>
     </tr>
     <tr *ngFor="let u of data">
         <td>
@@ -41,9 +47,14 @@
           <td>
             {{u.mul}}
           </td>
+          <td>
+            {{u.div}}
+          </td>
     </tr>
   </table>
 </ng-template>
 <ng-template #hideTable>
   {{noTable}}
 </ng-template>
+</fieldset>
+</div>

@@ -1,16 +1,5 @@
-<div *ngFor="let name of names">
-  <!--<div [ngSwitch]="_ui">
-    <ng-template *ngSwitchCase="'Angular'">
-      <div>{{name}}
-        </div>
-    </ng-template>
-    <ng-template *ngSwitchDefault>
-        <div>{{name}}
-        </div>
-    </ng-template>
-  </div>-->
-</div>
-
+<div>
+  <fieldset><legend>Switch case</legend>
 <div *ngIf="_ui == 'Angular' then angular else react">
   
 </div>
@@ -26,13 +15,10 @@
 <ng-template #greaterFive>
     <div>Index is greater than 5 </div>
 </ng-template>
-  
-<div>
-  <input #number type="number" name='number'/>
-  <input #quotient type="number" name='quotient'/>
-  <button (click)="load(number.value,quotient.value)">Load data</button>
-</div>
+
 
 <select (change)="getName($event)">
   <option *ngFor="let name of names">{{name}}</option>
 </select>
+</fieldset>
+</div>

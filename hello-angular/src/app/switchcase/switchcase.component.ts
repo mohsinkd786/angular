@@ -10,14 +10,11 @@ export class SwitchcaseComponent implements OnInit {
 
   constructor(private service : UserService) { }
 
-  names
-  _ui ='Angular'
- 
+  private _ui:string ='Angular'
+  private names:string[]
+
   ngOnInit() {
     this.names = this.service.getNames()
-  }
-  load(_number:Number,_quotient:Number){
-    alert('Hello '+_number +' ' +_quotient)
   }
   getName(event){
     alert('Dropdown clicked '+event.target.value)

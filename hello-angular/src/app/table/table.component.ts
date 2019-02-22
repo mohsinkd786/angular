@@ -15,8 +15,8 @@ export class TableComponent implements OnInit {
   ngOnInit() {
     this.data = this.service.getData(5,10)
   }
-  loadData(_number:Number,_limit:Number){
-    this.data = this.service.getData(_number,_limit)
+  loadData(_number:string,_limit:string){
+    this.data = this.service.getData(parseInt(_number),parseInt(_limit))
     this.isData = true
   }
 }

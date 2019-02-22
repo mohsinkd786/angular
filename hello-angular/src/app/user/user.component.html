@@ -1,11 +1,14 @@
-
+<fieldset>
+    <legend>For Loop</legend>
 <h2> ngFOR</h2>
 <div>
   <ul>
     <li *ngFor="let n of names" >{{n}}</li>
   </ul>
 </div>
-
+</fieldset>
+<fieldset>
+    <legend>IF Statement</legend>
 <h2>ngIF</h2>
 <div>
   <span *ngIf="showTable; then table else notable" ></span>
@@ -37,3 +40,4 @@
     </ng-template>
     <ng-template #notable>{{noTableMessage}}</ng-template>
 </div>
+</fieldset>
