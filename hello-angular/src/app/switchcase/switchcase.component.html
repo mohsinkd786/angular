@@ -32,9 +32,6 @@
   <input #quotient type="number" name='quotient'/>
   <button (click)="load(number.value,quotient.value)">Load data</button>
 </div>
-<ng-template *ngIf="isClicked">
-  Hello
-</ng-template>
 
 <select (change)="getName($event)">
   <option *ngFor="let name of names">{{name}}</option>

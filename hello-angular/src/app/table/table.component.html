@@ -1,3 +1,12 @@
+<div class='table-form'>
+  <input #number type="number" placeholder="Enter Number">
+  <input #limit type="number" placeholder="Specify Limit">
+  <button (click)=loadData(number.value,limit.value)>Generate</button>
+</div>
+<ng-template *ngIf="isData then showTable else hideTable">
+
+</ng-template>
+<ng-template #showTable>
 <table>
     <tr>
       <th>
@@ -34,3 +43,7 @@
           </td>
     </tr>
   </table>
+</ng-template>
+<ng-template #hideTable>
+  {{noTable}}
+</ng-template>

@@ -8,7 +8,7 @@ export class TableService {
   constructor() { }
   getData(_number,_limit){
     let data =[]
-    for(let i=1;i<_limit;i++){
+    for(let i=1;i<=_limit;i++){
       let result ={
         number : _number,
         quotient: i,

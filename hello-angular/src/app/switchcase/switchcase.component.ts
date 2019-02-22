@@ -13,13 +13,11 @@ export class SwitchcaseComponent implements OnInit {
   names
   _ui ='Angular'
  
-  isClicked = false
   ngOnInit() {
     this.names = this.service.getNames()
   }
   load(_number:Number,_quotient:Number){
     alert('Hello '+_number +' ' +_quotient)
-    //this.isClicked = true
   }
   getName(event){
     alert('Dropdown clicked '+event.target.value)
