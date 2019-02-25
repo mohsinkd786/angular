@@ -1,0 +1,20 @@
+<fieldset>
+    <legend>One Way Binding</legend>
+    <div>
+        <form #oneway="ngForm" (submit)="oneWay(oneway.value)">
+            <input type="text" name="name" placeholder="Name" ngModel/>
+            <input type="email" name="email" placeholder="Email" ngModel/>
+            <input type="submit" name="save" value="One Way"/>
+        </form>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Two Way Binding</legend>
+    <div>
+        <form #twoway="ngForm" (submit)="twoWay()">
+            <input type="text" name="name" placeholder="Name" [(ngModel)]="userModel.name"/>
+            <input type="email" name="email" placeholder="Email" [(ngModel)]="userModel.email"/>
+            <input type="submit" name="save" value="Two Way"/>
+        </form>
+    </div>
+</fieldset>
