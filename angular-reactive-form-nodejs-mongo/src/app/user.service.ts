@@ -39,7 +39,6 @@ export class UserService {
   })
  }
  buildAndCreateUser(user:any,callback){
-   console.log('Build')
   this.getMaxId((data)=>{
     // build user object
     let userObj:any ={
@@ -47,7 +46,6 @@ export class UserService {
       name: user.name,
       email: user.email
     }
-    console.log(userObj)
     this.createUser(userObj,(err)=>{
       callback(err)
     })
