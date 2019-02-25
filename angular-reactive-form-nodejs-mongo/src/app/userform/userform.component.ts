@@ -56,8 +56,11 @@ export class UserformComponent implements OnInit {
         email: this.userForm.controls['email'].value
       }
       // Add a new User 
-      this.service.addUser(this.user.name,this.user.email,(err)=>{
-        if(err! =undefined || err!=null){
+      this.service.buildAndCreateUser({ 
+        name:this.user.name,
+        email:this.user.email
+      },(err)=>{
+        if(err! =null){
           console.log('Unable to Process request')
           // re load users
           this.service.fetchUsers((users)=>{

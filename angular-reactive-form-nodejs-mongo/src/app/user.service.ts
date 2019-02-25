@@ -6,13 +6,13 @@ import { HttpClient } from "@angular/common/http";
 })
 export class UserService {
 
+  private _url:string = 'http://localhost:4200'
   constructor(private http:HttpClient){ }
   
   fetchUsers(callback) {
     // fetch data from backend /server side
-     this
-    .http
-    .get('http://localhost:4200/users')
+    this.http
+    .get(this._url+'/users')
     .subscribe(data=>{
       callback(data)
     },error=>{
@@ -21,24 +21,36 @@ export class UserService {
     //return users
  }
 
- addUser(name:string,email:string,callback){
-  let users=[]
-  this
-  .http
-  .post('http://localhost:4200/user/add',
-  {
-    "_id":13,
-    "name": name,
-    "email": email
-  }  
-  ).subscribe(response=>{
-    //users = this.fetchUsers() 
-    callback()
-    //console.log('User was added successfully')
+ getMaxId(callback){
+  this.http
+  .get(this._url+'/user/find/id/max')
+  .subscribe(data=>{
+    callback(data)
   },error=>{
-    //users = this.fetchUsers()
+    console.log('Unable to Process the request')
+  })
+ }
+ createUser(userObj:any,callback){
+  this.http
+  .post(this._url+'/user/add',userObj).subscribe(response=>{
+    callback(null)
+  },error=>{
     callback(error)
-    //console.log('Unable to add the User',error)
+  })
+ }
+ buildAndCreateUser(user:any,callback){
+   console.log('Build')
+  this.getMaxId((data)=>{
+    // build user object
+    let userObj:any ={
+      _id: parseInt(data.maxId) + 1,
+      name: user.name,
+      email: user.email
+    }
+    console.log(userObj)
+    this.createUser(userObj,(err)=>{
+      callback(err)
+    })
   })
  }
 }
