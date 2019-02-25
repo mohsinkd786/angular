@@ -1,0 +1,46 @@
+<fieldset>
+  <legend>Reactive Form</legend>
+  <div *ngIf="errorMessage" class='error'>
+    {{errorMessage}}
+  </div>
+  <form [formGroup]="userForm"  novalidate (submit)="save()">
+    <div>
+      <input type="text" formControlName="name" name="name" class='form-control'/>
+      <div class='error' *ngIf="userForm.status =='INVALID' ">
+          <div *ngIf="userForm.controls['name'].errors">
+              <div *ngIf="userForm.controls['name'].errors.required">
+                Name is Required
+                </div>
+          </div>  
+      </div>
+    </div>
+  <div>
+    <input type="text" formControlName="email" name="email" class='form-control'/>
+    <div class='error' *ngIf="userForm.controls['email'].errors">
+        <div *ngIf="userForm.controls['email'].errors.required">
+          Email is Required
+        </div>
+        <div *ngIf="userForm.controls['email'].errors.email">
+          Please specify a valid Email
+        </div>
+      </div>
+  </div>
+    <input type="submit" name="save" value="Save"/>
+  </form>
+</fieldset>
+
+<div *ngIf="user">
+  <fieldset>
+    <legend>Form Data</legend>
+    <div> 
+      <h2>
+        Name: {{user.name}}
+      </h2>
+      </div>
+    <div>
+      <h2>
+        Email: {{user.email}}
+      </h2>
+    </div>
+  </fieldset>
+</div>
