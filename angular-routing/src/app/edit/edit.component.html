@@ -1,12 +1,5 @@
-<!--<h2>
-  <div>
-    Hello
-  </div>
-  <div>
-    {{user.name}} / {{user.email}}
-  </div> </h2> -->
 <fieldset>
-  <legend>Edit {{userModel.name}}</legend>
+  <legend><b>Edit {{userModel.name}}</b></legend>
   <div>
     <form #twoway="ngForm" (submit)="update()">
         <input type="text" name="name" placeholder="Name" [(ngModel)]="userModel.name"/>
