@@ -21,6 +21,7 @@ export class EditComponent implements OnInit {
     this.service.updateUser(this.userModel,(res)=>{
       // redirect to user list component
       this.router.navigate(['/user'])
+      
     })
   }
 }
