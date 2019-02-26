@@ -1,0 +1,45 @@
+<fieldset>
+  <legend>Pipes</legend>
+  <div *ngIf="messages">
+    <ul>
+      <li *ngFor="let msg of messages">
+        {{msg | lowercase}}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="numbers">
+    <ul>
+      <li *ngFor="let n of numbers">
+       % Age {{n/100 | percent}}
+      </li>
+    </ul>
+    </div>
+    <div *ngIf="numbers">
+      <ul>
+        <li *ngFor="let n of numbers">
+        Decimal {{n | number: '1.0-1' }}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="numbers">
+      <ul>
+        <li *ngFor="let n of numbers">
+        Square Root {{n | sqroot | number: '1.0-1'}}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="numbers">
+      <ul>
+        <li *ngFor="let n of numbers">
+        Squares {{n | square | number: '1.0-1'}}
+        </li>
+      </ul>
+    </div>
+    Power of 4 times 2:  {{ 4 | power: 2  }}
+</fieldset>
+<fieldset>
+  <legend>Directives</legend>
+  <div [appBackground] bgColor="pink" textColor="blue">
+    Hi how r you, its good to finally meet you
+  </div>
+</fieldset>
