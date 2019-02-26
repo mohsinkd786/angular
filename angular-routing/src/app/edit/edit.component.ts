@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from "@angular/router";
 import { UserService } from "../user.service";
-import { FormGroup } from '../../../node_modules/@angular/forms';
 
 @Component({
   selector: 'app-edit',
@@ -19,9 +18,7 @@ export class EditComponent implements OnInit {
     })
   }
   update(){
-    console.log(this.userModel)
     this.service.updateUser(this.userModel,(res)=>{
-      console.log('Operated Performed')
       // redirect to user list component
       this.router.navigate(['/user'])
     })
