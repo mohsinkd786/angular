@@ -1,0 +1,10 @@
+<fieldset>
+  <legend><b>Edit {{userModel.name}}</b></legend>
+  <div>
+    <form #twoway="ngForm" (submit)="update()">
+        <input type="text"  class='form-control' name="name" placeholder="Name" [(ngModel)]="userModel.name"/>
+        <input type="email" class='form-control' name="email" placeholder="Email" [(ngModel)]="userModel.email"/>
+        <input type="submit" class='btn btn-primary' name="save" value="Update"/>
+    </form>
+  </div>
+</fieldset>
