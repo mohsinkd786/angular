@@ -1,0 +1,17 @@
+<!--<h2>
+  <div>
+    Hello
+  </div>
+  <div>
+    {{user.name}} / {{user.email}}
+  </div> </h2> -->
+<fieldset>
+  <legend>Edit {{userModel.name}}</legend>
+  <div>
+    <form #twoway="ngForm" (submit)="update()">
+        <input type="text" name="name" placeholder="Name" [(ngModel)]="userModel.name"/>
+        <input type="email" name="email" placeholder="Email" [(ngModel)]="userModel.email"/>
+        <input type="submit" name="save" value="Update"/>
+    </form>
+  </div>
+</fieldset>
